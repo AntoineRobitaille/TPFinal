@@ -1,19 +1,20 @@
-//=====================================
+import Foundation
 import UIKit
-//=====================================
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
-//-------------------------
+
+class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+    
+    //-------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-//-------------------------
+    //-------------------------
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-//-------------------------
-    @IBOutlet weak var tableV: UITableView!
+    //-------------------------
     
-
+    @IBOutlet weak var SecondTableV: UITableView!
+    
     //---------------------
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         tableView.backgroundColor = UIColor.clear
@@ -39,7 +40,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     //---------------------
-    
+
     
 }
-

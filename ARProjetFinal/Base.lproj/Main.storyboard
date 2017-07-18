@@ -36,6 +36,10 @@
                                 <rect key="frame" x="34" y="183" width="306" height="315"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="o6k-ah-V2Q"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="TQn-KJ-7pe"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CdM-pO-b1U">
                                 <rect key="frame" x="34" y="516" width="140" height="40"/>
@@ -56,14 +60,10 @@
                                 <rect key="frame" x="200" y="577" width="140" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="voirListe.png"/>
+                                <connections>
+                                    <segue destination="LWr-JC-Wxs" kind="presentation" id="6Lp-a5-Hjr"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZ0-Kt-K60">
-                                <rect key="frame" x="34" y="20" width="218" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k3e-wJ-5za">
                                 <rect key="frame" x="34" y="128" width="306" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -71,13 +71,63 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Check List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZ0-Kt-K60">
+                                <rect key="frame" x="34" y="20" width="218" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="46"/>
+                                <color key="textColor" red="0.23921568627450981" green="0.53333333333333333" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="0.36078431372549019" green="0.76078431372549016" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.15294117647058825" green="0.15294117647058825" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="tableV" destination="AaW-sT-isM" id="lzR-3r-VyW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="24.800000000000001" y="36.431784107946029"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="Jx9-N8-hhW">
+            <objects>
+                <viewController id="LWr-JC-Wxs" customClass="SecondViewController" customModule="ARProjetFinal" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ovr-tc-Xvv"/>
+                        <viewControllerLayoutGuide type="bottom" id="kFI-YG-wPO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jx0-9P-wCr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FBH-WM-pAN">
+                                <rect key="frame" x="16" y="95" width="343" height="448"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="LWr-JC-Wxs" id="pll-Nk-RND"/>
+                                    <outlet property="delegate" destination="LWr-JC-Wxs" id="pQN-L7-t8V"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4HZ-sj-wAm">
+                                <rect key="frame" x="16" y="586" width="140" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="retour.png"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" id="U4y-TO-eiM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.15294117647058825" green="0.15294117647058825" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="SecondTableV" destination="FBH-WM-pAN" id="LaN-xA-MPD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iNl-iv-Dj9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="703" y="36"/>
         </scene>
     </scenes>
     <resources>
@@ -85,6 +135,7 @@
         <image name="charger.png" width="282" height="82"/>
         <image name="logo.png" width="220" height="170"/>
         <image name="reinitialiser.png" width="282" height="82"/>
+        <image name="retour.png" width="282" height="82"/>
         <image name="sauvegarder.png" width="282" height="82"/>
         <image name="voirListe.png" width="282" height="82"/>
     </resources>

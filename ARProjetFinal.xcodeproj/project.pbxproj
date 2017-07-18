@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B87EFD41F1EA5A20000FFE8 /* retour.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B87EFD31F1EA5A20000FFE8 /* retour.png */; };
+		9B87EFD61F1EA60B0000FFE8 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B87EFD51F1EA60B0000FFE8 /* SecondViewController.swift */; };
 		9BB219C61F1D3D3300E645E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB219C51F1D3D3300E645E4 /* AppDelegate.swift */; };
 		9BB219C81F1D3D3300E645E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB219C71F1D3D3300E645E4 /* ViewController.swift */; };
 		9BB219CB1F1D3D3300E645E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BB219C91F1D3D3300E645E4 /* Main.storyboard */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B87EFD31F1EA5A20000FFE8 /* retour.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = retour.png; sourceTree = "<group>"; };
+		9B87EFD51F1EA60B0000FFE8 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		9BB219C21F1D3D3300E645E4 /* ARProjetFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARProjetFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BB219C51F1D3D3300E645E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BB219C71F1D3D3300E645E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +73,7 @@
 				9BB219D81F1D491C00E645E4 /* images */,
 				9BB219D71F1D3D4000E645E4 /* autres */,
 				9BB219C71F1D3D3300E645E4 /* ViewController.swift */,
+				9B87EFD51F1EA60B0000FFE8 /* SecondViewController.swift */,
 				9BB219C91F1D3D3300E645E4 /* Main.storyboard */,
 			);
 			path = ARProjetFinal;
@@ -88,6 +93,7 @@
 		9BB219D81F1D491C00E645E4 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				9B87EFD31F1EA5A20000FFE8 /* retour.png */,
 				9BB219E91F1D581000E645E4 /* Ajouter.png */,
 				9BB219E71F1D576500E645E4 /* voirListe.png */,
 				9BB219E51F1D571800E645E4 /* reinitialiser.png */,
@@ -161,6 +167,7 @@
 				9BB219DA1F1D493800E645E4 /* logo.png in Resources */,
 				9BB219D01F1D3D3300E645E4 /* LaunchScreen.storyboard in Resources */,
 				9BB219CD1F1D3D3300E645E4 /* Assets.xcassets in Resources */,
+				9B87EFD41F1EA5A20000FFE8 /* retour.png in Resources */,
 				9BB219E41F1D56CC00E645E4 /* charger.png in Resources */,
 				9BB219E81F1D576500E645E4 /* voirListe.png in Resources */,
 				9BB219CB1F1D3D3300E645E4 /* Main.storyboard in Resources */,
@@ -176,6 +183,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B87EFD61F1EA60B0000FFE8 /* SecondViewController.swift in Sources */,
 				9BB219C81F1D3D3300E645E4 /* ViewController.swift in Sources */,
 				9BB219C61F1D3D3300E645E4 /* AppDelegate.swift in Sources */,
 			);
@@ -339,6 +347,7 @@
 				9BB219D61F1D3D3300E645E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
