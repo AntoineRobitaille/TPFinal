@@ -70,6 +70,9 @@
                                 <state key="normal" image="Ajouter.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="Ajouter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sOc-AU-ctY"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Check List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZ0-Kt-K60">
                                 <rect key="frame" x="34" y="20" width="218" height="62"/>
@@ -82,6 +85,7 @@
                         <color key="backgroundColor" red="0.15294117647058825" green="0.15294117647058825" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
+                        <outlet property="newElement" destination="5J6-lY-Il7" id="vzU-VU-Mko"/>
                         <outlet property="tableV" destination="AaW-sT-isM" id="lzR-3r-VyW"/>
                     </connections>
                 </viewController>
