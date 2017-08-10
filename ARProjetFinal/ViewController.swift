@@ -10,6 +10,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var viewContent: [String] = []
     var defaults = UserDefaults.standard
     
+    
     //-------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +50,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //sauvegarder toutes les infos sur le serveur
     @IBAction func Sauvegarder(_ sender: UIButton) {
         
+        var listeDesTaches: [String] = []
+        var urlToSend = "http://localhost/dashboard/robitaille/check_list_php/add.php?json=["
+        
+        //parcour le tableview et prend le contenu des lignes
+        let cells = self.tableV.visibleCells 
+        
+        for cell in cells{
+            
+            listeDesTaches.append(cell.textLabel!.text!)
+            print(listeDesTaches)
+        }
+        
+
+        urlToSend += "]"
     }
+    
     
     //---Bouton réinitialiser
     //déselectionner toutes les taches sélectionnés
