@@ -45,22 +45,32 @@
                                 <rect key="frame" x="34" y="516" width="140" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="sauvegarder.png"/>
+                                <connections>
+                                    <action selector="Sauvegarder:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bHY-kx-4nF"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUS-1D-zyq">
                                 <rect key="frame" x="200" y="516" width="140" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="charger.png"/>
+                                <connections>
+                                    <action selector="Charger:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mh3-HA-Wd7"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KNc-07-jYk">
                                 <rect key="frame" x="34" y="577" width="140" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="reinitialiser.png"/>
+                                <connections>
+                                    <action selector="Reinitialiser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e2F-J1-vQf"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NxG-FB-w3m">
                                 <rect key="frame" x="200" y="577" width="140" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="voirListe.png"/>
                                 <connections>
+                                    <action selector="VoirListe:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jju-4L-03v"/>
                                     <segue destination="LWr-JC-Wxs" kind="presentation" id="6Lp-a5-Hjr"/>
                                 </connections>
                             </button>
