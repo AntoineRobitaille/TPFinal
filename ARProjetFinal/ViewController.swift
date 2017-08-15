@@ -8,6 +8,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var newElement: UITextField!
     
     var viewContent: [String] = []
+    var viewContent2: [Bool] = []
     var defaults = UserDefaults.standard
     
     
@@ -40,7 +41,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         else{
             Singleton.instancePartage.unArray.append(newElement.text!)
-            
+            Singleton.instancePartage.unArray2.append(false)
             loadData()
             tableV.reloadData()
         }
@@ -50,22 +51,42 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //sauvegarder toutes les infos sur le serveur
     @IBAction func Sauvegarder(_ sender: UIButton) {
         
-        var listeDesTaches: [String] = []
-        var urlToSend = "http://localhost/dashboard/robitaille/check_list_php/add.php?json=["
+        var dictionary: [String : Bool] = [:]
         
-        //parcour le tableview et prend le contenu des lignes
-        let cells = self.tableV.visibleCells 
-        
-        for cell in cells{
-            
-            listeDesTaches.append(cell.textLabel!.text!)
-            print(listeDesTaches)
+        for a in 0..<Singleton.instancePartage.unArray.count{
+            dictionary[Singleton.instancePartage.unArray[a]] = Singleton.instancePartage.unArray2[a]
         }
         
-
+        var urlToSend = "http://localhost/dashboard/robitaille/check_list_php/add.php?json=["
+        var counter = 0
+        let total = dictionary.count
+        for (a, b) in dictionary {
+            let noSpaces = replaceChars(originalStr: a, what: " ", byWhat: "_")
+            counter += 1
+            if counter < total {
+                urlToSend += "/\(noSpaces)/,/\(b)/!"
+            } else {
+                urlToSend += "/\(noSpaces)/,/\(b)/"
+            }
+        }
         urlToSend += "]"
+        
+        print(urlToSend)
+        
+        let session = URLSession.shared
+        let urlString = urlToSend
+        let url = NSURL(string: urlString)
+        let request = NSURLRequest(url: url! as URL)
+        let dataTask = session.dataTask(with: request as URLRequest) {
+            (data:Data?, response:URLResponse?, error:Error?) -> Void in
+        }
+        dataTask.resume()
+        
     }
     
+    func replaceChars(originalStr: String, what: String, byWhat: String) -> String {
+        return originalStr.replacingOccurrences(of: what, with: byWhat)
+    }
     
     //---Bouton réinitialiser
     //déselectionner toutes les taches sélectionnés
@@ -105,6 +126,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedCell:UITableViewCell = tableView.cellForRow(at: indexPath as IndexPath)!
         selectedCell.contentView.backgroundColor = UIColor.darkGray
+        
+        if Singleton.instancePartage.unArray2[indexPath.row] == false {
+          Singleton.instancePartage.unArray2[indexPath.row] = true
+        }
+        else {
+            Singleton.instancePartage.unArray2[indexPath.row] = false
+        }
     }
     //---------------------
     //----Éliminer les cellules
