@@ -9,6 +9,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var viewContent: [String] = []
     var viewContent2: [Bool] = []
+    var aDict: [String: Bool] = [:]
     var defaults = UserDefaults.standard
     
     
@@ -17,19 +18,54 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
 
         self.tableV.allowsMultipleSelection = true
+        getInfo()
         loadData()
     }
-    //-------------------------
+    //------------------------- *** possible problèeme pour chargement
     func loadData() {
         viewContent = []
         for a in Singleton.instancePartage.unArray{
             viewContent.append(a)
+        }
+        for b in Singleton.instancePartage.unArray2{
+            viewContent2.append(b)
         }
     }
     //-------------------------
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    func getInfo() {
+        
+        let urlString = "http://localhost/dashboard/robitaille/check_list_php/data.json"
+        
+        do {
+            if let url = URL(string: urlString) {
+                let data = try Data(contentsOf: url)
+                let json = try JSONSerialization.jsonObject(with: data, options: [])
+                if let object = json as? [String : String] {
+                    print(object)
+                    
+                    for (a,b) in object {
+                        let status: Bool
+                        Singleton.instancePartage.unArray.append(a)
+                        if b == "true"{ status = true}
+                        else { status = false}
+                        Singleton.instancePartage.unArray2.append(status)
+                    }
+                    
+                } else {
+                    print("JSON INVALID")
+                }
+            } else{
+                print("no file")
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
     //---Bouton ajouter
     @IBAction func Ajouter(_ sender: UIButton) {
         
@@ -98,7 +134,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //va chercher les informations sauvegarder sur le serveur et update la liste
     @IBAction func Charger(_ sender: UIButton) {
         
+        Singleton.instancePartage.unArray.removeAll()
+        Singleton.instancePartage.unArray2.removeAll()
+        getInfo()
+        loadData()
+        tableV.reloadData()
     }
+    
+    
+    
     //---Bouton Voir Liste
     //Prend les elements sélectionné et les envoies dans la liste
     @IBAction func VoirListe(_ sender: UIButton) {
